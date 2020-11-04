@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+<body>
+    <h1>Hello, {{ name|safe }}!!!</h1>
+    <code>{{ args }}</code>
+    <h3>{{ '{{ name }}' }}</h3>
+    <ul>
+        {% for item in products %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

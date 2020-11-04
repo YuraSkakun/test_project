@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <div>Welcome to index!</div>
+<!--    <div>Visit our <a href="/hello/">hello</a> </div>-->
+    <div>Visit our <a href="{{ url_for('hello_page') }}">hello</a> </div>
+<!--    <div>Visit our <a href="{{ url_for('hello_page', name='John') }}">hello John</a> </div>-->
+<!--    <div>Names: {{ names }}</div>-->
+    {% for name in names %}
+        <div>Visit our <a href="{{ url_for('hello_page', name=name) }}">hello {{ name }}</a> </div>
+    {% endfor %}
+</body>
+</html>

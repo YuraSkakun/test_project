@@ -38,7 +38,7 @@ def cache(f):
 #         return fibo(n-1) +fibo(n-2# )
 
 
-# fibo = cache(profile(fibo))
+# fibo = cache(profile(fibo)) # !!!!!!!!!!!!!!!!!
 
 @cache
 @profile
@@ -46,7 +46,7 @@ def fibo(n):
     if n < 2:
         return n
     else:
-        return fibo(n-1) +fibo(n-2)
+        return fibo(n-1) + fibo(n-2)
 
 
 # 1 1 2 3 5 8 13
@@ -93,7 +93,8 @@ def cache(max_limit=None):   # tut vyzyvaetsya function cache() <---- skobki
     return inner
 
 
-@cache(max_limit=10)
+#@functools.lru_cache  # est vstroennyy decorator lru_cache --> vnutri nego est max_limit !!! vmesto @cache(max..)
+@cache(max_limit=10)  # tut decorator(@) ne object cache , a rezultat funkcii cache(...) !!!
 @profile
 def fibo(n):
     """ inefficient fibo function """
